@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package proyectolaboratorio;
+package appbox;
 import java.util.*;
+
 /**
  *
  * @author victo
@@ -24,3 +25,4 @@ public class Pelea {
     // UN SELESCT PARA TENER DETERMINADO A PELEADORES:
     
 }
+
