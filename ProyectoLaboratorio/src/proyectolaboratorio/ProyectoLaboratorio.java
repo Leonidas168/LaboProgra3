@@ -18,7 +18,7 @@ public class ProyectoLaboratorio {
         Pelea a = new Pelea();
         
         a.designarJuez();
-        a.imprimirJuez();
+        
     }
     
 }
