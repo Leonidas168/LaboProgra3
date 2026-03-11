@@ -13,7 +13,13 @@ public class Peleador {
     private String Nombre;
     private float Altura, peso;
     private int edad;
-    
+
+    public Peleador(String nom, float alt, float peso, int age){
+        this.Nombre=nom;
+        this.Altura=alt;
+        this.peso=peso;
+        this.edad=age;
+    }
     // Getter y Setter para Nombre
     public String getNombre() {
         return Nombre;
