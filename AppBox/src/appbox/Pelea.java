@@ -24,6 +24,7 @@ public class Pelea {
        
     }
     public void configurarPeleador(String no, int indice){
+        System.out.println("Peleador: " + no);
         switch(no){
             case "Canelo Alvarez":
                 pe[indice] = new Peleador("Canelo Alvarez", 1.71f, 77.0f, 35);

@@ -206,7 +206,7 @@
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="7">
                 <StringItem index="0" value="Seleccione"/>
-                <StringItem index="1" value="Canelo &#xc1;lvarez"/>
+                <StringItem index="1" value="Canelo Alvarez"/>
                 <StringItem index="2" value="Mike Tyson"/>
                 <StringItem index="3" value="Manny Pacquiao"/>
                 <StringItem index="4" value="Floyd Mayweather"/>
@@ -227,7 +227,7 @@
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="6">
                 <StringItem index="0" value="Seleccione"/>
-                <StringItem index="1" value="Canelo &#xc1;lvarez"/>
+                <StringItem index="1" value="Canelo Alvarez"/>
                 <StringItem index="2" value="Mike Tyson"/>
                 <StringItem index="3" value="Manny Pacquiao"/>
                 <StringItem index="4" value="Floyd Mayweather"/>

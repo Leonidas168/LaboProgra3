@@ -89,14 +89,14 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel7.setText("Peleador 1");
 
-        Peleador1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Canelo Álvarez", "Mike Tyson", "Manny Pacquiao", "Floyd Mayweather", "Muhammad Ali", " " }));
+        Peleador1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Canelo Alvarez", "Mike Tyson", "Manny Pacquiao", "Floyd Mayweather", "Muhammad Ali", " " }));
         Peleador1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Peleador1ActionPerformed(evt);
             }
         });
 
-        Peleador2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Canelo Álvarez", "Mike Tyson", "Manny Pacquiao", "Floyd Mayweather", "Muhammad Ali" }));
+        Peleador2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Canelo Alvarez", "Mike Tyson", "Manny Pacquiao", "Floyd Mayweather", "Muhammad Ali" }));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton1.setText("Iniciar la pelea");
