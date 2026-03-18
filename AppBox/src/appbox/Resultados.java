@@ -24,20 +24,65 @@ public class Resultados extends javax.swing.JFrame {
 
     // Método para imprimir todas las calificaciones de cada juez
     public void imprimirCalificaciones() {
+        StringBuilder sb = new StringBuilder();
+        
+        // Variables para llevar el conteo de cuántos jueces favorecieron a cada peleador
+        int juecesPeleador1 = 0;
+        int juecesPeleador2 = 0;
+
         for (int i = 0; i < re.ju.length; i++) {
-            System.out.println("=== Juez " + (i + 1) + " ===");
+            sb.append("=== Juez ").append(i + 1).append(" ===\n");
 
-            System.out.print("Peleador 1: ");
+            // Variables para sumar los puntos de un solo juez
+            int sumaJuezP1 = 0;
+            int sumaJuezP2 = 0;
+
+            // Recorremos y sumamos los puntos del Peleador 1
+            sb.append("Peleador 1: ");
             for (Integer p : re.ju[i].puntos1) {
-                System.out.print(p + " ");
+                sb.append(p).append(" ");
+                sumaJuezP1 += p; // Sumamos al total del juez
             }
-            System.out.println(); // salto de línea
+            sb.append(" | Total: ").append(sumaJuezP1).append("\n");
 
-            System.out.print("Peleador 2: ");
+            // Recorremos y sumamos los puntos del Peleador 2
+            sb.append("Peleador 2: ");
             for (Integer p : re.ju[i].puntos2) {
-                System.out.print(p + " ");
+                sb.append(p).append(" ");
+                sumaJuezP2 += p; // Sumamos al total del juez
             }
-            System.out.println("\n"); // doble salto para separar jueces
+            sb.append(" | Total: ").append(sumaJuezP2).append("\n\n");
+
+            // Determinamos a quién vio ganar este juez
+            if (sumaJuezP1 > sumaJuezP2) {
+                juecesPeleador1++;
+            } else if (sumaJuezP2 > sumaJuezP1) {
+                juecesPeleador2++;
+            }
+        }
+
+        sb.append("---------------------------\n");
+        sb.append("      RESULTADO FINAL      \n");
+        sb.append("---------------------------\n");
+
+        if (re.MotivoFin != null && !re.MotivoFin.trim().isEmpty() && !re.MotivoFin.equals("Motivo")) {
+             sb.append("La pelea terminó antes de tiempo.\nMotivo: ").append(re.MotivoFin).append("\n\n");
+        }
+
+        // Declarar al ganador según las tarjetas de los jueces
+        if (juecesPeleador1 > juecesPeleador2) {
+            sb.append("¡GANADOR: Peleador 1 por decisión!\n");
+        } else if (juecesPeleador2 > juecesPeleador1) {
+            sb.append("¡GANADOR: Peleador 2 por decisión!\n");
+        } else {
+            sb.append("¡ES UN EMPATE!\n");
+        }
+
+        // Asignamos el texto final al JTextArea 
+        if (txtAreaResultados != null) {
+            txtAreaResultados.setText(sb.toString());
+        } else {
+            System.out.println(sb.toString()); 
         }
     }
 
@@ -50,17 +95,30 @@ public class Resultados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaResultados = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txtAreaResultados.setColumns(20);
+        txtAreaResultados.setRows(5);
+        jScrollPane1.setViewportView(txtAreaResultados);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -68,5 +126,7 @@ public class Resultados extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtAreaResultados;
     // End of variables declaration//GEN-END:variables
 }
